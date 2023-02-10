@@ -1,20 +1,26 @@
-import './App.css'
-import Header from "./components/Header";
-import TasksContainer from "./components/TasksContainer";
-import Button from "./components/Button/Button";
-
+import { useState } from 'react';
+import './App.css';
+import Header from './components/Header';
+import TasksContainer from './components/TasksContainer';
+import Button from './components/Button/Button';
+import Form from './components/Form/Form';
 
 function App() {
-  return (
+  const [viewForm, setViewForm] = useState(false);
+  
+  const renderFormHandler = () => {
+    setViewForm(!viewForm)
+  }
+
+	return (
 		<div className="app">
-      <Header />
-      <TasksContainer />
-      <Button />
+			<Header />
+			<TasksContainer />
+      <Button renderForm={renderFormHandler} viewForm={viewForm} />
+
+			{viewForm && <Form />}
 		</div>
-  );
+	);
 }
-
-
-
 
 export default App;

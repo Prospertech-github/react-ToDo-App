@@ -1,9 +1,10 @@
-import { useState } from 'react'
 import './Button.css'
 
-const Button = () => {
-  const [level, setLevel] = useState('welcome');
+const Button = ({renderForm, viewForm}) => {
+  
 /*
+  const [level, setLevel] = useState('welcome')
+
   let level = welcome
   setLevel(word){
     level = word;
@@ -12,7 +13,8 @@ const Button = () => {
 */
   return (
     <div className='button'>
-      <button> Add Task </button>
+      <button onClick={renderForm}> {viewForm ? 'Close Form' : 'Add Task'} </button>
+
     </div>
   )
 }
