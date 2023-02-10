@@ -1,6 +1,6 @@
 import './Button.css'
 
-const Button = ({renderForm, viewForm}) => {
+const Button = ({renderForm, viewFormState}) => {
   
 /*
   const [level, setLevel] = useState('welcome')
@@ -11,9 +11,14 @@ const Button = ({renderForm, viewForm}) => {
   }
   level = good afternoon;
 */
+
+
+  
   return (
     <div className='button'>
-      <button onClick={renderForm}> {viewForm ? 'Close Form' : 'Add Task'} </button>
+      <button onClick={renderForm}>
+        {viewFormState ? 'Close Form' : 'Add Task'}
+      </button>
 
     </div>
   )

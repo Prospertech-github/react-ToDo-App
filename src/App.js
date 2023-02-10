@@ -16,7 +16,7 @@ function App() {
 		<div className="app">
 			<Header />
 			<TasksContainer />
-      <Button renderForm={renderFormHandler} viewForm={viewForm} />
+      <Button renderForm={renderFormHandler} viewFormState={viewForm} />
 
 			{viewForm && <Form />}
 		</div>
