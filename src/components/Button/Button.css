@@ -6,6 +6,7 @@ button{
   display: block;
   width: 100%;
   background-color: #000;
+  border: #000;
   color: #fff;
   padding: 1rem;
   border-radius: 5px;
@@ -14,4 +15,7 @@ button{
 .btn-red{
   background-color: rgb(119, 12, 12);
   border: 1px solid rgb(119, 12, 12);
+}
+button:focus, .btn-red:focus{
+  outline: none;
 }
