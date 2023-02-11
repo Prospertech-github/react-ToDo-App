@@ -1,18 +1,23 @@
-import React from 'react'
-import './Task.css'
+import React from 'react';
+import { MdDelete } from 'react-icons/md';
+import './Task.css';
 
-const Task = ({taskName, taskDetails}) => {
-  return (
-    <div className='task'>
-      <h3> {taskName} </h3>
-      <p> {taskDetails} </p>
-    </div>
-  )
-}
+const Task = ({ task, deleteTask }) => {
+	return (
+		<div className="task" onClick={() => console.log(task)}>
+			<div className="taskinfo">
+				<h3> {task.taskName} </h3>
+				<p> {task.taskDetails} </p>
+			</div>
+
+			<MdDelete className="icon" onClick={() => deleteTask(task.id)} />
+		</div>
+	);
+};
 
 Task.defaultProps = {
-  taskName: 'My Task',
-  taskDetails: 'Friday by 2PM'
-}
+	taskName: 'My Task',
+	taskDetails: 'Friday by 2PM',
+};
 
-export default Task
+export default Task;
