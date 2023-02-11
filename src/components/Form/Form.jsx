@@ -8,14 +8,11 @@ const Form = ({saveTask}) => {
 	const submitHandler = (e) => {
 		e.preventDefault()
 
-		if (!taskName) {
-			alert('Enter Task Name')
+		if (!taskName || !taskDetails) {
+			alert('Complete Task details')
+		} else {
+			saveTask({ taskName, taskDetails })
 		}
-		if (!taskDetails) {
-			alert('Enter Details of Task')
-		}
-
-		saveTask({ taskName, taskDetails })
 		
 		setTaskName('')
 		setTaskDetails('')
@@ -32,6 +29,7 @@ const Form = ({saveTask}) => {
 					value={taskName}
 					onChange={(e) => setTaskName(e.target.value)}
 					placeholder="Enter Task Name"
+					autoComplete='off'
 				/>
 			</div>
 
@@ -44,6 +42,7 @@ const Form = ({saveTask}) => {
 					value={taskDetails}
 					onChange={(e) => setTaskDetails(e.target.value)}
 					placeholder="Enter Task Details"
+					autoComplete='off'
 				/>
 			</div>
 
