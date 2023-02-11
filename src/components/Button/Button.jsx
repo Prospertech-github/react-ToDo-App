@@ -15,13 +15,15 @@ const Button = ({renderForm, viewFormState}) => {
 
   
   return (
-    <div className='button'>
-      <button onClick={renderForm}>
-        {viewFormState ? 'Close Form' : 'Add Task'}
-      </button>
-
-    </div>
-  )
+		<div className='button'>
+			<button
+				onClick={renderForm}
+				className={viewFormState ? 'btn-red' : ''}
+			>
+				{viewFormState ? 'Close Form' : 'Add Task'}
+			</button>
+		</div>
+  );
 }
 
 export default Button
