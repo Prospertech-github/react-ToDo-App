@@ -18,7 +18,7 @@ const Button = ({renderForm, viewFormState}) => {
 		<div className='button'>
 			<button
 				onClick={renderForm}
-				className={viewFormState ? 'btn-red' : ''}
+				className={viewFormState ? 'btn-norm btn-red' : 'btn-norm'}
 			>
 				{viewFormState ? 'Close Form' : 'Add Task'}
 			</button>
