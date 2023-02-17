@@ -4,6 +4,7 @@ import Header from './components/Header';
 import TasksContainer from './components/TasksContainer';
 import Button from './components/Button/Button';
 import Form from './components/Form/Form';
+import { ThemeProvider } from './ThemeContext';
 
 function App() {
 	const [tasks, setTasks] = useState([]);
@@ -27,15 +28,17 @@ function App() {
 
 	return (
 		<div className="app">
-			<Header />
-			{tasks.length > 0 ? (
-				<TasksContainer tasks={tasks} deleteTask={deleteTaskHandler} />
-			) : (
-				<h2> PLEASE ADD A TASK </h2>
-			)}
-			<Button renderForm={renderFormHandler} viewFormState={viewForm} />
+			<ThemeProvider>
+				<Header />
+				{tasks.length > 0 ? (
+					<TasksContainer tasks={tasks} deleteTask={deleteTaskHandler} />
+				) : (
+					<h2> PLEASE ADD A TASK </h2>
+				)}
+				<Button renderForm={renderFormHandler} viewFormState={viewForm} />
 
-			{viewForm && <Form saveTask={handleSaveTask} />}
+				{viewForm && <Form saveTask={handleSaveTask} />}
+			</ThemeProvider>
 		</div>
 	);
 }
